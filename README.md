@@ -32,3 +32,15 @@ If you have changed other files in the `config` directory (such as `config/west.
 Resources can be found on Kinesis.com
 https://kinesis-ergo.com/support/kb360pro/#firmware-updates
 https://kinesis-ergo.com/support/kb360pro/#manuals
+
+Flashing the kinesis 360 on linux if it doesn't automount
+  List devices and look for the ADV 360
+  - lsblk --fs
+  Get detailed info (sda or sdb respectively)
+  - sudo blkid -p /dev/sda
+  Mount the drive completely
+  - mkdir /mnt/keyboard
+  - sudo mount /dev/sdb /mnt/keyboard
+  Copy over the .uf2 config files from wherever they are into the mount directory. Left to left, right to right.
+  - e.g. sudo cp $HOME/Downloads/left.uf2 /mnt/keyboard/.
+
